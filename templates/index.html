@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity AI Assistant</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Infinity AI - Your personal AI assistant ready to answer any question">
+</head>
+<body>
+    <div class="particles-container" id="particles-js"></div>
+    <div class="main-container">
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                    <!-- Header Section -->
+                    <header class="mb-4 d-flex align-items-center justify-content-center">
+                        <div class="logo-container-large me-3">
+                            <i class="fas fa-infinity logo-icon animate-pulse"></i>
+                        </div>
+                        <h1 class="text-gradient main-title">Infinity AI</h1>
+                    </header>
+                    
+                    <!-- Main Chat Card -->
+                    <div class="card main-card mb-4 border-0 shadow-lg">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <div class="status-indicator active me-2"></div>
+                                <span class="status-text">Online & Ready</span>
+                            </div>
+                            <div class="d-flex">
+                                <button id="theme-toggle" class="btn btn-sm btn-outline-secondary me-2" title="Toggle theme">
+                                    <i class="fas fa-moon"></i>
+                                </button>
+                                <button id="clear-chat" class="btn btn-sm btn-outline-secondary" title="Clear chat history">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Chat Window -->
+                        <div class="card-body" id="chat-container">
+                            <div id="chat-messages" class="chat-area">
+                                <!-- Bot welcome message will be added here by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <!-- Input Area -->
+                        <div class="card-footer border-top-0">
+                            <form id="chat-form" class="d-flex">
+                                <div class="input-group">
+                                    <span class="input-group-text bg-transparent border-0">
+                                        <i class="fas fa-search text-muted"></i>
+                                    </span>
+                                    <input type="text" id="user-input" class="form-control rounded-pill" 
+                                        placeholder="Ask me anything..." autocomplete="off">
+                                    <button type="submit" class="btn btn-primary rounded-circle ms-2">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </form>
+                            
+                            <!-- Suggestion Chips -->
+                            <div class="suggestions-container mt-3">
+                                <div class="suggestion-chips">
+                                    <button class="suggestion-chip" data-query="Tell me about the Taj Mahal">
+                                        <i class="fas fa-landmark me-1"></i> Taj Mahal
+                                    </button>
+                                    <button class="suggestion-chip" data-query="What time is it in Mumbai?">
+                                        <i class="fas fa-clock me-1"></i> Mumbai Time
+                                    </button>
+                                    <button class="suggestion-chip" data-query="Who is Narendra Modi?">
+                                        <i class="fas fa-user-tie me-1"></i> Narendra Modi
+                                    </button>
+                                    <button class="suggestion-chip" data-query="Tell me about Indian food">
+                                        <i class="fas fa-utensils me-1"></i> Indian Food
+                                    </button>
+                                    <button class="suggestion-chip" data-query="What is Bollywood?">
+                                        <i class="fas fa-film me-1"></i> Bollywood
+                                    </button>
+                                    <button class="suggestion-chip" data-query="Tell me about Diwali">
+                                        <i class="fas fa-fire me-1"></i> Diwali
+                                    </button>
+                                    <button class="suggestion-chip" data-query="Tell me a joke">
+                                        <i class="fas fa-laugh-beam me-1"></i> Joke
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Information Footer -->
+                    <div class="text-center mb-4">
+                        <p class="capabilities-text mb-1">
+                            <span class="badge rounded-pill capability-badge me-1"><i class="fas fa-globe me-1"></i> Knowledge</span>
+                            <span class="badge rounded-pill capability-badge me-1"><i class="fas fa-calculator me-1"></i> Math</span>
+                            <span class="badge rounded-pill capability-badge me-1"><i class="fas fa-clock me-1"></i> Time</span>
+                            <span class="badge rounded-pill capability-badge me-1"><i class="fas fa-laugh me-1"></i> Humor</span>
+                            <span class="badge rounded-pill capability-badge"><i class="fas fa-lightbulb me-1"></i> Advice</span>
+                        </p>
+                        <p class="version-text">Infinity AI v1.0 - Your Personal Assistant</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
